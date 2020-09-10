@@ -1,6 +1,8 @@
 export const GAME_BOARD_INITIAL_SIZE = {
-  xs: 15,
-  ys: 15,
+  coord: {
+    xs: 5,
+    ys: 5,
+  },
 };
 
 export const INITIAL_ROBOT_STATE = {
@@ -10,3 +12,7 @@ export const INITIAL_ROBOT_STATE = {
   },
   face: "",
 };
+
+export const INITIAL_ERROR_MESSAGE = {
+  errorMsg: "",
+}
