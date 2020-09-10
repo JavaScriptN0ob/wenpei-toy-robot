@@ -17,7 +17,7 @@ export const turnLeft = () => ({
   type: robotActionType.TURN_LEFT,
 });
 
-export const turnRight = (F) => ({
+export const turnRight = () => ({
   type: robotActionType.TURN_RIGHT,
 });
 
