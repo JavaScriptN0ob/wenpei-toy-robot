@@ -7,10 +7,10 @@ export const GAME_BOARD_INITIAL_SIZE = {
 
 export const INITIAL_ROBOT_STATE = {
   coord: {
-    x: "",
-    y: "",
+    x: 0,
+    y: 0,
   },
-  face: "",
+  face: "EAST",
 };
 
 export const INITIAL_ERROR_MESSAGE = {

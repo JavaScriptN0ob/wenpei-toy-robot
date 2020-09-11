@@ -40,23 +40,23 @@ const robotReducer = (state = INITIAL_ROBOT_STATE, action) => {
 
 const moveForward = (state) => {
   const { coord, face } = state;
-
+  console.log(typeof(coord.x));
   return {
     NORTH: {
       ...coord,
-      y: coord.y + 1,
+      x: coord.x - 1,
     },
     EAST: {
       ...coord,
-      x: coord.x + 1,
+      y: coord.y + 1,
     },
     SOUTH: {
       ...coord,
-      y: coord.y - 1,
+      x: coord.x + 1,
     },
     WEST: {
       ...coord,
-      x: coord.x - 1,
+      y: coord.y - 1,
     },
   }[face]
 };

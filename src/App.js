@@ -2,12 +2,14 @@ import React from 'react';
 
 import './App.css';
 
-import RobotGame from './components/RobotGame'
+import Board from './components/Board';
+import Command from './components/Command';
 
 function App() {
   return (
-    <div className="App">
-      <RobotGame />
+    <div className="app">
+      <Board />
+      <Command />
     </div>
   );
 }
