@@ -1,4 +1,4 @@
-import { GAME_BOARD_INITIAL_SIZE } from '../../constants';
+import { GAME_BOARD_INITIAL_SIZE } from '../../../constants';
 
 /**
  *

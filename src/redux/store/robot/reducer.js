@@ -1,5 +1,8 @@
 import robotActionType from './type';
-import { INITIAL_ROBOT_STATE } from '../../constants';
+import { INITIAL_ROBOT_STATE } from '../../../constants';
+
+// todo: Import Thunk to valid board。reducer & robot*coord;
+
 
 const robotReducer = (state = INITIAL_ROBOT_STATE, action) => {
   switch (action.type) {
@@ -44,19 +47,19 @@ const moveForward = (state) => {
   return {
     NORTH: {
       ...coord,
-      x: coord.x - 1,
+      y: coord.y + 1,
     },
     EAST: {
       ...coord,
-      y: coord.y + 1,
+      x: coord.x + 1,
     },
     SOUTH: {
       ...coord,
-      x: coord.x + 1,
+      y: coord.y - 1,
     },
     WEST: {
       ...coord,
-      y: coord.y - 1,
+      x: coord.x - 1,
     },
   }[face]
 };

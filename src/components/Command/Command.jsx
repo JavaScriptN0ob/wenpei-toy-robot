@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './Command.module.css';
 
-import { placeRobot, moveForward, turnLeft, turnRight, reportCurrentPosition } from '../../redux/robot/action';
+import { placeRobot, moveForward, turnLeft, turnRight, reportCurrentPosition } from '../../redux/store/robot/action';
 
 function Command({ 
   robot, 

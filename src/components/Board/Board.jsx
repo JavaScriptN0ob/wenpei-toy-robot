@@ -6,30 +6,30 @@ import styles from './Board.module.css';
 import Row from './Row';
 import Cell from './Cell';
 import Robot from '../Robot';
-import { selectBoardDimension } from '../../redux/gameBoard/selector';
+import gameBoard from '../../redux/selectors/gameBoard';
 
-function Board({ board, robot }) {
+function Board({ gameBoard }) {
   return (
     <div className={styles.board__container}>
-      {board.map((row, xs) => (
-          <Row key={xs}>
-            {row.map((ys) => (
-              (xs === robot.coord.x && ys === robot.coord.y) ? (
-                <Robot key={ys} face={robot.face} />
+      {gameBoard.map(({ y, cells }) => (
+        <Row key={y}>
+          {cells.map(({ x, element }) => 
+            <React.Fragment>
+              {element !== undefined ? (
+                <Robot key={`${x},${y}`} {...element} />
               ) : (
-                <Cell key={ys} />
-              )
-            ))}
-          </Row>
-        ))
-      }
+                <Cell key={`${x},${y}`} />
+              )}
+            </React.Fragment>
+          )}
+        </Row>
+      ))}
     </div>
   )
 }
 
 const mapStateToProps = (state) => ({
-  board: selectBoardDimension(state),
-  robot: state.robot,
+  gameBoard: gameBoard(state),
 });
 
 
